@@ -23,17 +23,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 @EnableScheduling
 open class Application : SpringBootServletInitializer() {
 
-    @Bean
-    open fun corsConfigurer(): WebMvcConfigurer {
-        return object : WebMvcConfigurer {
-            override fun addCorsMappings(registry: CorsRegistry) {
-                registry.addMapping("/post/**").allowedOrigins("*")
-                registry.addMapping("/get/**").allowedOrigins("*")
-            }
-        }
-    }
-
-
     companion object {
         val logger: Log = LogFactory.getLog(this.javaClass)
 
