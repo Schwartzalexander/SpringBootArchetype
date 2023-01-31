@@ -10,30 +10,31 @@ import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 import org.springframework.web.servlet.config.annotation.CorsRegistry
+
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+
 
 /**
  * Spring Security Configuration
  */
 @Configuration
 @EnableWebSecurity
-open class WebSecurityConfig {
+class WebSecurityConfig {
 
     @Bean
     @Throws(Exception::class)
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
-            .authorizeHttpRequests(
-                Customizer { auth ->
-                    auth.anyRequest().permitAll()
-                }
-            )
+            .authorizeHttpRequests { auth ->
+                auth.anyRequest().permitAll()
+            }
             .httpBasic(Customizer.withDefaults())
+            .cors().and().csrf().disable();
         return http.build()
     }
 
     @Bean
-    open fun corsConfigurationSource(): CorsConfigurationSource? {
+    fun corsConfigurationSource(): CorsConfigurationSource? {
         val configuration = CorsConfiguration()
         configuration.addAllowedOriginPattern("*")
         configuration.allowedMethods = listOf("*")
