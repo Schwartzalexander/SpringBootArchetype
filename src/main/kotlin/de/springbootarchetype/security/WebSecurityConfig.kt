@@ -2,6 +2,8 @@ package de.springbootarchetype.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.security.authentication.AuthenticationManager
+import org.springframework.security.authentication.AuthenticationServiceException
 import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
@@ -52,5 +54,13 @@ class WebSecurityConfig {
                 registry.addMapping("/rest/*").allowedOrigins("*")
             }
         }
+    }
+}
+
+@Configuration
+class ApplicationConfiguration {
+    @Bean
+    fun noopAuthenticationManager(): AuthenticationManager {
+        return AuthenticationManager { throw AuthenticationServiceException("Authentication is disabled") }
     }
 }
