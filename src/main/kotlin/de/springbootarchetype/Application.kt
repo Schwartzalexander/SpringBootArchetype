@@ -1,22 +1,18 @@
 package de.springbootarchetype
 
-import de.springbootarchetype.restControllers.PATH_REST_CONTROLLERS
-import de.springbootarchetype.restControllers.PATH_REST_CONTROLLER_HELP
-import de.springbootarchetype.restControllers.PATH_REST_CONTROLLER_STATUS
+import de.springbootarchetype.restcontrollers.PATH_REST_CONTROLLERS
+import de.springbootarchetype.restcontrollers.PATH_REST_CONTROLLER_HELP
+import de.springbootarchetype.restcontrollers.PATH_REST_CONTROLLER_STATUS
 import de.springbootarchetype.util.SpringContextHolder.Companion.applicationContext
 import de.springbootarchetype.util.StaticUtils
 import de.springbootarchetype.util.StaticUtils.Companion.determineHost
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.scheduling.annotation.EnableScheduling
-import org.springframework.web.servlet.config.annotation.CorsRegistry
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @SpringBootApplication
 @ComponentScan(basePackages = ["de.springbootarchetype"])

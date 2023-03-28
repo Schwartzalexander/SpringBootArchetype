@@ -1,4 +1,4 @@
-package de.springbootarchetype.restControllers
+package de.springbootarchetype.restcontrollers
 
 
 const val PATH_REST_CONTROLLERS = "/rest"

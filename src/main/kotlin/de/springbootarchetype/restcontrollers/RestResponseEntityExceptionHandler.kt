@@ -1,4 +1,4 @@
-package de.springbootarchetype.restControllers
+package de.springbootarchetype.restcontrollers
 
 import de.springbootarchetype.domain.results.HttpRequestResult
 import de.springbootarchetype.domain.results.Result

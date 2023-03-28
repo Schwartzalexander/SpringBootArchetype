@@ -1,4 +1,4 @@
-package de.springbootarchetype.restControllers
+package de.springbootarchetype.restcontrollers
 
 import de.springbootarchetype.util.StaticUtils
 import org.apache.commons.logging.Log
